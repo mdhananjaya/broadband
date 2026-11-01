@@ -1,0 +1,38 @@
+create user for Jenkins installations
+1. login as root
+2. mkdir -p /u01/app
+3. useradd -d /u01/app/oracle -s /bin/bash oracle
+4. passwd oracle
+   set the password as oracle
+5. exit from root user and login as oracle with new putty window
+-------
+
+
+install Jenkins and java with oracle user
+1. create directories under /u01/app/oracle
+    mkdir devops
+    cd  devops
+    mkdir 2.5 java env
+
+    
+1. install tomcat
+   download tomcat 
+   wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.61/bin/apache-tomcat-10.1.61.tar.gz --no-check-certificate
+   or 
+   download to your windows and transfer through WinSCP
+   1. extract the tomcat
+     tar -zxvf  apache-tomcat-10.1.61.tar.gz
+     mv apache-tomcat-10.1.61 tomcat1    
+2. install java
+    https://www.oracle.com/java/technologies/downloads/#java25
+    download to your local system and transfer to your Linux server with WinSCP
+    login with oracle user through WinSCP and transfer to Linux server
+     
+     tar -zxvf jdk-25_linux-x64_bin.tar.gz
+      mv jdk-25.0.4.1 jdk25
+
+3. install Jenkins
+    download Jenkins.war file from https://www.jenkins.io/download/
+    transfer Jenkins.war file to Linux 
+
+   all the files should be under /u01/app/oracle/devops
